@@ -1,0 +1,35 @@
+.tip {
+    position: relative;
+
+    color: #666;
+    margin-bottom: 5px;
+}
+.switch {
+    float: right;
+}
+
+.highlight-words {
+    border-radius: 2px;
+    border: 1px dashed #aaa;
+    box-shadow: 0 0 5px rgba(247, 114, 114, 0.1) inset;
+
+    color: #666;
+
+    font-size: 12px;
+    line-height: 16px;
+}
+.highlight-words textarea {
+    display: block;
+    box-sizing: border-box;
+    height: 50px;
+    width: 358px;
+    max-width: 358px;
+    min-height: 50px;
+    padding: 5px;
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    resize: none;
+}

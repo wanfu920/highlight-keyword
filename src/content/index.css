@@ -1,0 +1,52 @@
+i.chrome-extensions-multi-highlight {
+    font-size: inherit!important;
+    font-style: inherit!important;
+    box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 3px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.chrome-extensions-multi-highlight-deepskyblue {
+    background-color: deepskyblue!important;
+    color: black!important;
+}
+
+.chrome-extensions-multi-highlight-red {
+    background-color: red!important;
+    color: black!important;
+}
+
+.chrome-extensions-multi-highlight-blue {
+    background-color: blue!important;
+    color: white!important;
+}
+
+.chrome-extensions-multi-highlight-cyan {
+    background-color: cyan!important;
+    color: black!important;
+}
+
+.chrome-extensions-multi-highlight-green {
+    background-color: green!important;
+    color: white!important;
+}
+
+.chrome-extensions-multi-highlight-orange {
+    background-color: orange!important;
+    color: black!important;
+}
+
+.chrome-extensions-multi-highlight-deeppink {
+    background-color: deeppink!important;
+    color: black!important;
+}
+
+.chrome-extensions-multi-highlight-magenta {
+    background-color: magenta!important;
+    color: black!important;
+}
+
+.chrome-extensions-multi-highlight-yellow {
+    background-color: yellow!important;
+    color: black!important;
+}
