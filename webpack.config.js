@@ -7,6 +7,7 @@ const webpack = require('webpack')
 let config = {
     mode: "development",
     entry: {
+        'background/index': './src/background/index.js',
         'popup/index': './src/popup/index.jsx',
         'content/index': './src/content/index.js',
     },
