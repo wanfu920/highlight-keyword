@@ -15,7 +15,6 @@ class highlight {
     }
 
     init() {
-        console.log('init');
         this._getConfig().then(() => {
             if (this.config.enableHighlight) {
                 this._loopHighlight();

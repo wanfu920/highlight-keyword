@@ -16,7 +16,6 @@ function interceptWeexKaolaDomain(details) {
   ) {
     for (const [originPath, repalcePath] of interceptWeexKaolaDomainPaths) {
       if (originPath.test(details.url)) {
-        console.log(details);
         return {
           redirectUrl: details.url.replace(originPath, repalcePath)
         }
@@ -35,17 +34,24 @@ chrome.webRequest.onBeforeRequest.addListener(
   ["blocking", "requestBody"]
 );
 
-function setRequestHeaders(requestHeaders, headers) {
-  for (let i = 0; i < requestHeaders.length; ++i) {
-    const { name } = requestHeaders[i];
-    if (headers[name] !== undefined) {
-      requestHeaders[i].value = headers[name];
+function setRequestHeaders(requestHeaders, headers = {}) {
+  Object.entries(headers).forEach(([name, value]) => {
+    let isFind = false;
+    for (let i = 0; i < requestHeaders.length; ++i) {
+      isFind = requestHeaders[i].name.toLowerCase() == name.toLowerCase();
+      if(isFind){
+        requestHeaders[i].value = value;
+        break;
+      }
     }
-  }
+    if(!isFind){
+      requestHeaders.push({name, value});
+    }
+  });
   return requestHeaders;
 }
 const interceptUrlHeaders = [
-  [/https:\/\/community\.kaola\.com\/api\/manage\/good-thing\/\d+$/, {
+  [/https?:\/\/(community|zone)\.kaola\.com.*$/, {
     Referer: 'https://kol-ms.kaola.com'
   }],
 ];
@@ -87,5 +93,5 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
     // return res;
   },
   { urls: [ "*://*/*", ] },
-  ["blocking", "requestHeaders"]
+  ["blocking", "requestHeaders", "extraHeaders"]
 );
